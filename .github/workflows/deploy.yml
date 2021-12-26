@@ -21,3 +21,8 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+      
+      - name: create env file
+        run: |
+          touch .env
+          echo API_KEY =${{ secrets.API_KEY }} >> .env
