@@ -10,11 +10,7 @@ export default class ApiService {
    async getData() {
       return await axios
          .get(
-            `https://pixabay.com/api/?key=${process.env.API_KEY}
-               &q=${this.search}
-               &image_type=photo
-               &orientation=horizontal
-               &safesearch=true&page=${this.page}&per_page=40`
+            `https://pixabay.com/api/?key=${process.env.API_KEY}&q=${this.search}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`
          )
          .then(response => {
             this.incrementPage();
